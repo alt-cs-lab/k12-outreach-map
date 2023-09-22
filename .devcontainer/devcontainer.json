@@ -1,0 +1,12 @@
+{
+    "containerEnv": {
+        "HOST": "https://${localEnv:CODESPACE_NAME}-${localEnv:PORT}.githubpreview.dev"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp"
+            ]
+        }
+    }
+}

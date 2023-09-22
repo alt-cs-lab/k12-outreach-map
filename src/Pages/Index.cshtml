@@ -3,12 +3,40 @@
 
 <!DOCTYPE html>
     <head>
-        <title>KSUCS K-12 Outreach Map</title>
+        <title>KSUCS K-12 Outreach Map Tool</title>
         <link type="text/css" rel="stylesheet" href="css/site.css">
     </head>
     <body>
 
-        <partial name="_MapSvg"/>
+        <h1>K-State Computer Science K-12 Outreach Map Tool</h1>
+        <p>
+            This service provides a configurable map of Kansas K-12 
+            school districts as an SVG file, accessible at <a href="@Model.Host/Map">@Model.Host/Map</a>
+        </p> 
+        <img src="/Map" alt="Uncustomized District Map" />
 
+        <h2>Marking School Districts</h2>
+        <p>
+            You can indicate specific school districts to highlight 
+            by including a <code>districts</code> query parameter 
+            containing a comma-deliniated list of school districts. 
+            I.e. to highlight districts 302 and 404, you would use 
+            the url:
+        </p>
+        <code>@Model.Host/Map?districts=302,404</code>
+        <img src="/Map/districts=302,404" alt="District highlight example" />
+
+        <p>
+            You can also supply a custom color to use for filling the 
+            highlighted districts (the default is K-State purple). This 
+            should be provided as the <code>fill</code> query parameter. 
+            It can use HTML color names or hex color values (though you must 
+            omit the "#"):
+        </p>
+        <code>@Model.Host/Map?districts=102,302,222&fill=yellow</code>
+        <img src="/Map/districts=102,302,222&fill=yellow" alt="Yellow fill example" />
+
+        <code>@Model.Host/Map?districts=102,302,222&fill=44af</code>
+        <img src="/Map/districts=102,302,222&fill=44af" alt="Hex fill example" />
     </body>
 </html>
