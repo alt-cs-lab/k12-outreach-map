@@ -6,18 +6,32 @@ using Microsoft.AspNetCore.Http.Extensions;
 
 namespace K12OutreachMap.Pages;
 
+
+/// <summary>
+/// The model for the index page
+/// </summary>
 public class IndexModel : PageModel
 {
     private readonly ILogger<IndexModel> _logger;
 
-    public string? Host {get; set;}
+    /// <summary>
+    /// The current base url for the site (i.e. https://k12map.cs.ksu.edu)
+    /// </summary>
+    public string? BaseUrl {get; set;}
 
+    /// <summary>
+    /// Constructs a new Index page model instance
+    /// </summary>
+    /// <param name="logger">The logger object</param>
     public IndexModel(ILogger<IndexModel> logger)
     {
         _logger = logger;
-        Host = Environment.GetEnvironmentVariable("HOST");
+        BaseUrl = Environment.GetEnvironmentVariable("BASE_URL");
     }
 
+    /// <summary>
+    /// Serves a page with instructions on how to use the map
+    /// </summary>
     public void OnGet()
     {
 
