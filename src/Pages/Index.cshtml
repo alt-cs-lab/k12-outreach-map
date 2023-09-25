@@ -44,5 +44,27 @@
             <code>@Model.BaseUrl/Map?districts=383&fill=44af</code>
         </div>
         <img src="@Model.BaseUrl/Map?districts=383&fill=44af" alt="Hex Fill Example"/>
+
+        <h2>Modifying the Image</h2>
+        <p>
+            You can provide a custom size (default is 700x400 pixels) by supplying a width and/or height parameter
+            in the query string.  For example, the following
+            sets the map to be 200 pixels wide:
+        </p>
+        <div>
+            <code>@Model.BaseUrl/Map?width=200</code>
+        </div>
+        <img src="@Model.BaseUrl/Map?width=200" alt="Custom Width Example"/>
+
+        <p>
+            When supplying both a width and height, map will be centered in the available space, 
+            preserving the aspect ratio. 
+        </p>
+        <div>
+            <code>@Model.BaseUrl/Map?width=400&height=400</code>
+        </div>
+        <img src="@Model.BaseUrl/Map?width=400&height=400" alt="Custom Width and Height Example"/>
+
+
     </body>
 </html>
