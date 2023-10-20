@@ -23,6 +23,7 @@ jobs:
   build:
     # Run job on Ubuntu runner
     runs-on: ubuntu-latest
+    permissions: write-all
 
     # Job Steps
     steps:
