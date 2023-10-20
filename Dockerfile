@@ -49,6 +49,9 @@ WORKDIR /App
 # We then copy our production build from the previous image into the App directory.
 COPY --from=build-env /out .
 
+# Copy map file to container
+COPY ./src/map.svg .
+
 EXPOSE 80
 
 # Finally, the entry  point tells a Docker host how to launch our application.

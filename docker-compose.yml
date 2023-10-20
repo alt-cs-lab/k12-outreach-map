@@ -1,0 +1,9 @@
+version: "3"
+services:
+  app:
+    container_name: k12-outreach-map
+    build: .
+    environment: 
+      BASE_URL: "http://localhost"
+    ports:
+      - "80:80"
